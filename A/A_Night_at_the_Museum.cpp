@@ -39,13 +39,13 @@ int main()
     fast;
     string s;
     cin >> s;
-    // ll asn = min(abs('a' - s[0]), 26 - abs('a' - s[0]));
-    // for (int i = 1; i < s.length(); i++)
-    // {
-    //     ll x = abs(s[i] - s[i - 1]);
-    //     asn += min(x, 26 - x);
-    // }
-    // cout << asn;
+    ll asn = min(abs('a' - s[0]), 26 - abs('a' - s[0]));
+    for (int i = 1; i < s.length(); i++)
+    {
+        ll x = abs(s[i] - s[i - 1]);
+        asn += min(x, 26 - x);
+    }
+    cout << asn;
 
     return 0;
 }
