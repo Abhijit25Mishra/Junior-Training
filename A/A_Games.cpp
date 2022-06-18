@@ -37,32 +37,22 @@ const int N = 2e5 + 5;
 int main()
 {
     fast;
-
+    ll t = 1;
+    cin >> t;
+    ll a[t], b[t], c[100], d[100];
+    fr(t)
     {
-        ll n;
-        string s;
-        ll a = 0;
-        cin >> n >> s;
-        fr(n)
-        {
-            if (s[i] == 'A')
-            {
-                a++;
-            }
-        }
-        ll d = n - a;
-
-        if (a > d)
-            cout << "Anton";
-        else if (d > a)
-        {
-            cout << "Danik";
-        }
-        else
-        {
-            cout << "Friendship";
-        }
-        nl;
+        cin >> a[i] >> b[i];
     }
+    ll ans = 0;
+    nesfr(t, t)
+    {
+        if (a[i] == b[j])
+        {
+            ans++;
+        }
+    }
+    cout << ans;
+
     return 0;
 }

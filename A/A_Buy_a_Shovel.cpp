@@ -37,32 +37,37 @@ const int N = 2e5 + 5;
 int main()
 {
     fast;
-
+    ll n, x;
+    bool flag = true;
+    cin >> n >> x;
+    ll y = n % 10;
+    if (y != 0)
     {
-        ll n;
-        string s;
-        ll a = 0;
-        cin >> n >> s;
-        fr(n)
-        {
-            if (s[i] == 'A')
-            {
-                a++;
-            }
-        }
-        ll d = n - a;
 
-        if (a > d)
-            cout << "Anton";
-        else if (d > a)
+        fr(20)
         {
-            cout << "Danik";
+
+            if (x % y == 0)
+            {
+                cout << x / y;
+                flag = false;
+                break;
+            }
+            x += 10;
         }
-        else
-        {
-            cout << "Friendship";
-        }
-        nl;
     }
+    ll z = 0;
+    ll cnt = 0;
+    while (flag)
+    {
+        cnt++;
+        z += n;
+        if (z % 10 == 0)
+        {
+            cout << cnt;
+            break;
+        }
+    }
+
     return 0;
 }
