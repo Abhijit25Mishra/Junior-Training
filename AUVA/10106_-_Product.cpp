@@ -43,38 +43,45 @@ int main()
         // ll sz1, sz2, sz3, sz3;
         reverse(all(s1));
         reverse(all(s2));
-        vi x(2500);
-        for (int i = 0; i < s1.length(); i++)
+        if (s1 == "0" || s2 == "0")
         {
-            for (int j = 0; j < s2.length(); j++)
-            {
-                // cout << s1[i] - '0' << " " << (ll)s2[j] - '0' << " ";
-                x[i + j] += (s1[i] - '0') * (s2[j] - '0');
-            }
+            cout << 0 << endl;
         }
+        else
+        {
+            vi x(2500);
+            for (int i = 0; i < s1.length(); i++)
+            {
+                for (int j = 0; j < s2.length(); j++)
+                {
+                    // cout << s1[i] - '0' << " " << (ll)s2[j] - '0' << " ";
+                    x[i + j] += (s1[i] - '0') * (s2[j] - '0');
+                }
+            }
 
-        fr(x.size())
-        {
-            if (x[i] > 9)
+            fr(x.size())
             {
-                ll temp = x[i] / 10;
-                x[i + 1] = temp;
-                x[i] = x[i] % 10;
+                if (x[i] > 9)
+                {
+                    ll temp = x[i] / 10;
+                    x[i + 1] = temp;
+                    x[i] = x[i] % 10;
+                }
             }
+            bool flag = false;
+            rfr(x.size())
+            {
+                if (x[i] != 0)
+                {
+                    flag = true;
+                }
+                if (flag)
+                {
+                    cout << x[i];
+                }
+            }
+            nl;
         }
-        bool flag = false;
-        rfr(x.size())
-        {
-            if (x[i] != 0)
-            {
-                flag = true;
-            }
-            if (flag)
-            {
-                cout << x[i];
-            }
-        }
-        nl;
     }
 
     return 0;
