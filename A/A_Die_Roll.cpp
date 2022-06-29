@@ -41,13 +41,9 @@ int main()
     cin >> x >> y;
     ll how = 0;
 
-    for (int i = 1; i < 7; i++)
-    {
-        if (max(x, y) <= i)
-        {
-            how++;
-        }
-    }
+    how = max(x, y) - 1;
+    how = 6 - how;
+
     if (how == 6)
     {
         cout << 1 << "/" << 1;

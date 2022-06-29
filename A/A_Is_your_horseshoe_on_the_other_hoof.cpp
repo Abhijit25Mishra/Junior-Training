@@ -44,10 +44,7 @@ int main()
         cin >> temp;
         a.insert(temp);
     }
-    // for (auto x : a)
-    // {
-    //     cout << x << " ";
-    // }
+
     cout << 4 - a.size();
     return 0;
 }

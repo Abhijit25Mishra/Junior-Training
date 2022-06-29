@@ -43,10 +43,8 @@ int main()
     ll y = n % 10;
     if (y != 0)
     {
-
         fr(20)
         {
-
             if (x % y == 0)
             {
                 cout << x / y;
